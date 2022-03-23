@@ -40,6 +40,10 @@ Partial Class Form1
         Me.SaveButton = New System.Windows.Forms.Button()
         Me.TrackBar2 = New System.Windows.Forms.TrackBar()
         Me.TrackBar3 = New System.Windows.Forms.TrackBar()
+        Me.RectangleButton = New System.Windows.Forms.Button()
+        Me.LineButton = New System.Windows.Forms.Button()
+        Me.CircleButton = New System.Windows.Forms.Button()
+        Me.SquareButton = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,11 +192,51 @@ Partial Class Form1
         Me.TrackBar3.TabIndex = 15
         Me.TrackBar3.Value = 10
         '
+        'RectangleButton
+        '
+        Me.RectangleButton.Location = New System.Drawing.Point(688, 354)
+        Me.RectangleButton.Name = "RectangleButton"
+        Me.RectangleButton.Size = New System.Drawing.Size(75, 23)
+        Me.RectangleButton.TabIndex = 16
+        Me.RectangleButton.Text = "Rectangle"
+        Me.RectangleButton.UseVisualStyleBackColor = True
+        '
+        'LineButton
+        '
+        Me.LineButton.Location = New System.Drawing.Point(687, 383)
+        Me.LineButton.Name = "LineButton"
+        Me.LineButton.Size = New System.Drawing.Size(75, 23)
+        Me.LineButton.TabIndex = 17
+        Me.LineButton.Text = "Line"
+        Me.LineButton.UseVisualStyleBackColor = True
+        '
+        'CircleButton
+        '
+        Me.CircleButton.Location = New System.Drawing.Point(687, 412)
+        Me.CircleButton.Name = "CircleButton"
+        Me.CircleButton.Size = New System.Drawing.Size(75, 23)
+        Me.CircleButton.TabIndex = 18
+        Me.CircleButton.Text = "Circle"
+        Me.CircleButton.UseVisualStyleBackColor = True
+        '
+        'SquareButton
+        '
+        Me.SquareButton.Location = New System.Drawing.Point(687, 441)
+        Me.SquareButton.Name = "SquareButton"
+        Me.SquareButton.Size = New System.Drawing.Size(75, 23)
+        Me.SquareButton.TabIndex = 19
+        Me.SquareButton.Text = "Square"
+        Me.SquareButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(781, 487)
+        Me.Controls.Add(Me.SquareButton)
+        Me.Controls.Add(Me.CircleButton)
+        Me.Controls.Add(Me.LineButton)
+        Me.Controls.Add(Me.RectangleButton)
         Me.Controls.Add(Me.TrackBar3)
         Me.Controls.Add(Me.TrackBar2)
         Me.Controls.Add(Me.SaveButton)
@@ -241,4 +285,8 @@ Partial Class Form1
     Friend WithEvents SaveButton As Button
     Friend WithEvents TrackBar2 As TrackBar
     Friend WithEvents TrackBar3 As TrackBar
+    Friend WithEvents RectangleButton As Button
+    Friend WithEvents LineButton As Button
+    Friend WithEvents CircleButton As Button
+    Friend WithEvents SquareButton As Button
 End Class

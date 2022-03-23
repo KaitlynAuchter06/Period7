@@ -12,14 +12,34 @@
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
-            Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
-            l.Pen = New Pen(c, w)
-            l.W = TrackBar2.Value
-            l.H = TrackBar3.Value
-            m_shapes.Add(l)
+            Dim D As Object
+
+            If Type = "line" Then
+                D = New Line(PictureBox1.Image, m_Previous, e.Location)
+                D.Pen = New Pen(c, w)
+            End If
+            If Type = "rectangle" Then
+                D = New Rectangle(PictureBox1.Image, m_Previous, e.Location)
+                D.Pen = New Pen(c, w)
+            End If
+            If Type = "circle" Then
+                D = New Circle(PictureBox1.Image, m_Previous, e.Location)
+                D.Pen = New Pen(c, w)
+            End If
+            If Type = "square" Then
+                D = New Square(PictureBox1.Image, m_Previous, e.Location)
+                D.Pen = New Pen(c, w)
+            End If
+            m_shapes.Add(D)
             PictureBox1.Invalidate()
             m_Previous = e.Location
         End If
+
+        'Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
+        'l.Pen = New Pen(c, w)
+        'l.w = TrackBar2.Value
+        'l.h = TrackBar3.Value
+
     End Sub
 
     Private Sub pictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
@@ -96,5 +116,21 @@
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         SaveFileDialog1.ShowDialog()
         PictureBox1.Image.Save(SaveFileDialog1.FileName)
+    End Sub
+
+    Private Sub RectangleButton_Click(sender As Object, e As EventArgs) Handles RectangleButton.Click
+        Type = "rectangle"
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles LineButton.Click
+        Type = "Line"
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles CircleButton.Click
+        Type = "Circle"
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles SquareButton.Click
+        Type = "Square"
     End Sub
 End Class
