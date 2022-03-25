@@ -3,8 +3,8 @@
     Dim m_shapes As New Collection
     Dim c As Color
     Dim w As Integer
-
-
+    Dim type As String
+    Dim D As Object
     Private Sub pictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
         m_Previous = e.Location
         pictureBox1_MouseMove(sender, e)
@@ -12,33 +12,44 @@
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
-            Dim D As Object
-
-            If Type = "line" Then
+            D = New Line(PictureBox1.Image, m_Previous, e.Location)
+            D.Pen = New Pen(c, w)
+            If type = "line" Then
                 D = New Line(PictureBox1.Image, m_Previous, e.Location)
                 D.Pen = New Pen(c, w)
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
             End If
-            If Type = "rectangle" Then
+            If type = "rectangle" Then
                 D = New Rectangle(PictureBox1.Image, m_Previous, e.Location)
                 D.Pen = New Pen(c, w)
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
             End If
-            If Type = "circle" Then
+            If type = "Circle" Then
                 D = New Circle(PictureBox1.Image, m_Previous, e.Location)
                 D.Pen = New Pen(c, w)
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
             End If
-            If Type = "square" Then
+            If type = "Square" Then
                 D = New Square(PictureBox1.Image, m_Previous, e.Location)
                 D.Pen = New Pen(c, w)
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
+            End If
+            If type = "Polygon" Then
+                D = New Polygon(PictureBox1.Image, m_Previous, e.Location)
+                D.Pen = New Pen(c, w)
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
             End If
             m_shapes.Add(D)
             PictureBox1.Invalidate()
             m_Previous = e.Location
         End If
 
-        'Dim l As New Circle(PictureBox1.Image, m_Previous, e.Location)
-        'l.Pen = New Pen(c, w)
-        'l.w = TrackBar2.Value
-        'l.h = TrackBar3.Value
+
 
     End Sub
 
@@ -126,11 +137,15 @@
         Type = "Line"
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles CircleButton.Click
-        Type = "Circle"
+    Private Sub CircleButton_Click(sender As Object, e As EventArgs) Handles CircleButton.Click
+        type = "Circle"
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles SquareButton.Click
-        Type = "Square"
+    Private Sub SquareButton_Click(sender As Object, e As EventArgs) Handles SquareButton.Click
+        type = "Square"
+    End Sub
+
+    Private Sub PolyButton_Click(sender As Object, e As EventArgs) Handles PolyButton.Click
+        type = "Polygon"
     End Sub
 End Class

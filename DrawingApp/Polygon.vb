@@ -1,8 +1,9 @@
-﻿Public Class Rectangle
+﻿Public Class Polygon
     Public Property Pen As Pen
     Dim m_image As Image
     Dim m_a As Point
     Dim m_b As Point
+    Dim points(2) As Point
     Public Property h As Integer
     Public Property w As Integer
 
@@ -15,8 +16,11 @@
     End Sub
     Public Sub Draw()
         Using g As Graphics = Graphics.FromImage(m_image)
-            'g.DrawRectangle(Pen, m_a.X, m_a.Y, 100, 100, h, w)
-            g.DrawRectangle(Pen, m_a.X, m_b.Y, 100, 100)
+            points(0) = New Point(m_a.X, m_a.Y)
+            points(1) = New Point(m_a.X, m_a.Y + h)
+            points(2) = New Point(m_a.X + w, m_a.Y)
+
+            g.DrawPolygon(Pen, points)
         End Using
 
     End Sub

@@ -44,6 +44,7 @@ Partial Class Form1
         Me.LineButton = New System.Windows.Forms.Button()
         Me.CircleButton = New System.Windows.Forms.Button()
         Me.SquareButton = New System.Windows.Forms.Button()
+        Me.PolyButton = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -228,11 +229,21 @@ Partial Class Form1
         Me.SquareButton.Text = "Square"
         Me.SquareButton.UseVisualStyleBackColor = True
         '
+        'PolyButton
+        '
+        Me.PolyButton.Location = New System.Drawing.Point(687, 470)
+        Me.PolyButton.Name = "PolyButton"
+        Me.PolyButton.Size = New System.Drawing.Size(75, 23)
+        Me.PolyButton.TabIndex = 20
+        Me.PolyButton.Text = "Polygon"
+        Me.PolyButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(781, 487)
+        Me.ClientSize = New System.Drawing.Size(800, 516)
+        Me.Controls.Add(Me.PolyButton)
         Me.Controls.Add(Me.SquareButton)
         Me.Controls.Add(Me.CircleButton)
         Me.Controls.Add(Me.LineButton)
@@ -289,4 +300,5 @@ Partial Class Form1
     Friend WithEvents LineButton As Button
     Friend WithEvents CircleButton As Button
     Friend WithEvents SquareButton As Button
+    Friend WithEvents PolyButton As Button
 End Class
