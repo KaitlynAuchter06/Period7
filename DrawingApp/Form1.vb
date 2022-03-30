@@ -44,10 +44,24 @@
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
+            If type = "N-gon" Then
+                D = New N_gon(PictureBox1.Image, m_Previous, e.Location)
+                D.Pen = New Pen(c, w)
+                D.Radius = RadiusTrackBar.Value
+                D.Sides = SidesTrackBar.Value
+                'D.h = TrackBar2.Value
+                'D.w = TrackBar3.Value
+            End If
+            If type = "Picture" Then
+                D = New PBox(PictureBox1.Image, m_Previous, e.Location)
+                D.picture = PictureBox2.Image
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
+            End If
             m_shapes.Add(D)
-            PictureBox1.Invalidate()
-            m_Previous = e.Location
-        End If
+                PictureBox1.Invalidate()
+                m_Previous = e.Location
+            End If
 
 
 
@@ -147,5 +161,25 @@
 
     Private Sub PolyButton_Click(sender As Object, e As EventArgs) Handles PolyButton.Click
         type = "Polygon"
+    End Sub
+
+    Private Sub Button11_Click_1(sender As Object, e As EventArgs) Handles Button11.Click
+        c = sender.backcolor
+    End Sub
+
+    Private Sub NgonButton_Click(sender As Object, e As EventArgs) Handles NgonButton.Click
+        type = "N-gon"
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        type = "Picture"
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        OpenFileDialog1.ShowDialog()
+    End Sub
+
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+        PictureBox2.Load(OpenFileDialog1.FileName)
     End Sub
 End Class
