@@ -14,38 +14,65 @@
         If m_Previous IsNot Nothing Then
             D = New Line(PictureBox1.Image, m_Previous, e.Location)
             D.Pen = New Pen(c, w)
+            D.xSpeed = xSpeedTrackBar.Value
             If type = "line" Then
                 D = New Line(PictureBox1.Image, m_Previous, e.Location)
                 D.Pen = New Pen(c, w)
+                D.xSpeed = xSpeedTrackBar.Value
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
             If type = "rectangle" Then
                 D = New Rectangle(PictureBox1.Image, m_Previous, e.Location)
+                D.xSpeed = xSpeedTrackBar.Value
+                D.fill = CheckBox2.Checked
+                D.color1 = c
+                D.color1 = Button8.BackColor
+                D.color2 = Button11.BackColor
                 D.Pen = New Pen(c, w)
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
             If type = "Circle" Then
                 D = New Circle(PictureBox1.Image, m_Previous, e.Location)
+                D.xSpeed = xSpeedTrackBar.Value
+                D.fill = CheckBox2.Checked
+                D.color1 = c
+                D.color1 = Button6.BackColor
+                D.color2 = Button8.BackColor
                 D.Pen = New Pen(c, w)
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
             If type = "Square" Then
                 D = New Square(PictureBox1.Image, m_Previous, e.Location)
+                D.xSpeed = xSpeedTrackBar.Value
+                D.fill = CheckBox2.Checked
+                D.color1 = c
+                D.color1 = Button4.BackColor
+                D.color2 = Button7.BackColor
                 D.Pen = New Pen(c, w)
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
             If type = "Polygon" Then
                 D = New Polygon(PictureBox1.Image, m_Previous, e.Location)
+                D.xSpeed = xSpeedTrackBar.Value
+                D.fill = CheckBox2.Checked
+                D.color1 = c
+                D.color1 = Button2.BackColor
+                D.color2 = Button11.BackColor
                 D.Pen = New Pen(c, w)
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
             If type = "N-gon" Then
                 D = New N_gon(PictureBox1.Image, m_Previous, e.Location)
+                D.xSpeed = xSpeedTrackBar.Value
+                D.fill = CheckBox2.Checked
+                D.color1 = c
+                D.color1 = Button8.BackColor
+                D.color2 = Button5.BackColor
                 D.Pen = New Pen(c, w)
                 D.Radius = RadiusTrackBar.Value
                 D.Sides = SidesTrackBar.Value
@@ -85,6 +112,9 @@
         For Each s As Object In m_shapes
             s.Draw()
         Next
+        If (CheckBox1.Checked) Then
+            Refresh()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
