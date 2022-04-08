@@ -23,9 +23,9 @@
     End Sub
     Public Sub Draw()
         Using g As Graphics = Graphics.FromImage(m_image)
-            points(0) = New Point(m_a.X, m_a.Y)
-            points(1) = New Point(m_a.X, m_a.Y + h)
-            points(2) = New Point(m_a.X + w, m_a.Y)
+            points(0) = New Point(m_a.X + xOffset, m_a.Y + yOffset)
+            points(1) = New Point(m_a.X + xOffset, m_a.Y + yOffset + h)
+            points(2) = New Point(m_a.X + xOffset + w, m_a.Y + yOffset)
             xOffset += xSpeed
             yOffset += YSpeed
             If Fill Then

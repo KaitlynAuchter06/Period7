@@ -85,6 +85,17 @@
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
             End If
+            If type = "Pie" Then
+                D = New Pie(PictureBox1.Image, m_Previous, e.Location)
+                D.xSpeed = xSpeedTrackBar.Value
+            D.fill = CheckBox2.Checked
+                D.color1 = c
+                D.color1 = Button8.BackColor
+                D.color2 = Button11.BackColor
+                D.Pen = New Pen(c, w)
+                D.h = TrackBar2.Value
+                D.w = TrackBar3.Value
+            End If
             m_shapes.Add(D)
                 PictureBox1.Invalidate()
                 m_Previous = e.Location
@@ -211,5 +222,9 @@
 
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         PictureBox2.Load(OpenFileDialog1.FileName)
+    End Sub
+
+    Private Sub PieButton_Click(sender As Object, e As EventArgs) Handles PieButton.Click
+        type = "Pie"
     End Sub
 End Class

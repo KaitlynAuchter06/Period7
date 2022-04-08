@@ -29,7 +29,7 @@
 
             X = Math.Cos(index * 2 * Math.PI / Sides) * Radius
             Y = Math.Sin(index * 2 * Math.PI / Sides) * Radius
-            Points(index) = New Point(m_a.X + X, m_a.Y + Y)
+            Points(index) = New Point(m_a.X + xOffset + X, m_a.Y + yOffset + Y)
         Next
         Using g As Graphics = Graphics.FromImage(m_image)
             xOffset += xSpeed

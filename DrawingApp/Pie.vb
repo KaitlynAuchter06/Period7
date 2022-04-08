@@ -1,4 +1,4 @@
-﻿Public Class Square
+﻿Public Class Pie
     Public Property Pen As Pen
     Public Property color1 As Color
     Public Property color2 As Color
@@ -30,9 +30,9 @@
                                 New Point(20, 10),
                                 color1,
                                 color2)
-                g.FillRectangle(lingrBrush, m_a.X, m_a.Y, 50, 50)
+                g.FillPie(lingrBrush, m_a.X, m_a.Y, 100, 100, 0, 90)
             Else
-                g.DrawRectangle(Pen, m_a.X + xOffset, m_a.Y + yOffset, m_b.X + xOffset, m_b.Y + yOffset)
+                g.DrawPie(Pen, m_a.X + xOffset, m_a.Y + yOffset, 100, 100, 0, 90)
             End If
         End Using
 
