@@ -35,6 +35,8 @@
                 g.FillRectangle(lingrBrush, m_a.X, m_a.Y, 100, 100)
             Else
                 g.DrawRectangle(Pen, m_a.X + xOffset, m_a.Y + yOffset, m_b.X + xOffset, m_b.Y + yOffset)
+                g.DrawEllipse(Pen, m_a.X + 15, m_a.Y, 10, 100)
+                g.DrawEllipse(Pen, m_a.X - 100, m_a.Y, 100, 10)
             End If
 
         End Using
