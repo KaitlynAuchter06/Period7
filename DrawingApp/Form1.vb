@@ -50,7 +50,7 @@
                 D.fill = CheckBox2.Checked
                 D.color1 = c
                 D.color1 = Button4.BackColor
-                D.color2 = Button7.BackColor
+                D.color2 = Button6.BackColor
                 D.Pen = New Pen(c, w)
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
@@ -90,8 +90,8 @@
                 D.xSpeed = xSpeedTrackBar.Value
             D.fill = CheckBox2.Checked
                 D.color1 = c
-                D.color1 = Button8.BackColor
-                D.color2 = Button11.BackColor
+                D.color1 = Button4.BackColor
+                D.color2 = Button5.BackColor
                 D.Pen = New Pen(c, w)
                 D.h = TrackBar2.Value
                 D.w = TrackBar3.Value
